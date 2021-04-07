@@ -51,7 +51,7 @@ new Vue({
         },
 
         avatarURL: function(email) {
-            return 'https://dmltc3v4.cf/chat/ch1/avatar.png';
+            return 'https://dmltc3v4.cf/chat/avatars/blue.png';
         }
     }
 });
