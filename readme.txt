@@ -5,3 +5,6 @@ https://scotch.io/bar-talk/build-a-realtime-chat-server-with-go-and-websockets
 
 See his repo @:
 https://github.com/scotch-io/go-realtime-chat.git
+
+
+Tips and instructions can be found in note.txt in the template files.
