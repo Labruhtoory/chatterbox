@@ -1,5 +1,6 @@
-I made these services to run multiple chat servers as their respective processes. 
-This way I would not have to manually start each server instance on reboot. 
+I made these services to run the chat servers as their respective processes. 
+This way I would not have to manually start each server instance upon reboot.
+This also frees up the number of terminal windows that are needed to be open. 
 
 
 ----------------------------------------------------------------------------
@@ -27,11 +28,9 @@ Then I would compile the red chat:
 
 $ sudo go build -o /opt/chats/chat2 /var/www/chatterbox/chat-red/src/main.go
 
-
 and so on for however many chats that you have.
 
-
-so I edited and compiled all 4 original chat servers, now I have chat1,chat2,chat3,chat4 in my /opt/chats folder
+I edited and compiled all 4 original chat servers, now I have chat1,chat2,chat3,chat4 in my /opt/chats/ folder
 
 
 -------------------------------------------------------
@@ -53,7 +52,6 @@ $ sudo cp /path/to/chatterbox/services/* /opt/chats/services/
 
 You should have chat1.service to chat4.service in this folder
 
-
 -----
 If you changed the path to compile the src/main.go programs, then you need to edit the services.
 
@@ -64,7 +62,6 @@ ExecStart=/opt/chat/services/chat1
 edit this line to:
 
 ExecStart=/full/path/to/your/chat1
-
 
 -----
 
