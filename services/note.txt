@@ -50,8 +50,6 @@ For this project, in /opt/chats/services/, you can copy the services from chatte
 
 $ sudo cp /path/to/chatterbox/services/* /opt/chats/services/
 
-You should have chat1.service to chat4.service in this folder
-
 -----
 If you changed the path to compile the src/main.go programs, then you need to edit the services.
 
@@ -75,24 +73,28 @@ $ sudo cp /opt/chats/services/* /etc/systemd/system/
 (If you changed the location for the services)
 copy them from their path:
 
-$ sudo cp /path/to/services/* /etc/systemd/system/
+$ sudo cp /full/path/to/services/* /etc/systemd/system/
 
 -----
 
-Since new file have been added to it, you need to reload the unit file definitions:
+Since new files have been added to systemd, you need to reload the unit file definitions:
 
 $ sudo systemctl daemon-reload
 
-Now enable each service (1,2,3,4):
+Now enable each service:
 
-$ sudo systemctl enable chat1
-$ sudo systemctl enable chat2
+$ sudo systemctl enable chat1.service
+$ sudo systemctl enable chat2.service
 
 and so on until every service is enabled.
 Now, you can simply start your services:
 
-$ sudo systemctl start chat1
-$ sudo systemctl start chat2
-------------------------------------------
+$ sudo systemctl start chat1.service
+$ sudo systemctl start chat2.service
+
+You can check the status of your services:
+
+$ sudo systemctl start chat1.service
+$ sudo systemctl start chat2.service
 
 Now your chat servers will start on boot and not require a terminal window to be constantly open.

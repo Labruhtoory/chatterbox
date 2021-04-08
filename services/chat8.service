@@ -1,11 +1,11 @@
 [Unit]
-Description=Chat service 4
+Description=Chat service 8
 Wants=network.target
 After=syslog.target network-online.target
 
 [Service]
 Type=simple
-ExecStart=/opt/chats/chat4
+ExecStart=/opt/chats/chat8
 Restart=on-failure
 RestartSec=10
 KillMode=process

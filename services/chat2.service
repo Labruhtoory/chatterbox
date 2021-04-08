@@ -1,5 +1,5 @@
 [Unit]
-Description=Chat2 service
+Description=Chat service 2
 Wants=network.target
 After=syslog.target network-online.target
 
