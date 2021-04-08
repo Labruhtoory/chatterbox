@@ -5,7 +5,7 @@ new Vue({
         ws: null, // Our websocket
         newMsg: '', // Holds new messages to be sent to the server
         chatContent: '', // A running list of chat messages displayed on the screen
-        email: "hello", // Email address used for grabbing an avatar
+        email: "email", // Email address used for grabbing an avatar
         username: null, // Our username
         joined: false // True if email and username have been filled in
     },
@@ -51,7 +51,8 @@ new Vue({
         },
 
         avatarURL: function(email) {
-            return 'https://dmltc3v4.cf/chat/avatars/blue.png';
+            return 'https://dmltc3v4.cf/chat/avatars/red.png';
         }
     }
 });
+c81313
