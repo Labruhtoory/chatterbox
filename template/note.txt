@@ -1,9 +1,11 @@
 Here are the parts to focus on for customizing css:
 (*This makes the blue chat)
+(#edit these files' elements to either include these attributes or change to these attributes)
 
 
 
 (text1)
+
 ---style3big.css 
 html {
     color: #ffffff;
