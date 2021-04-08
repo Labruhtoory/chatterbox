@@ -39,7 +39,7 @@ func main() {
 	log.Println("https server started on :8005")
 	cert := "/full/path/to/cert"
 	key := "full/path/to/certkey"
-	err := http.ListenAndServeTLS(":8006", cert, key, nil)
+	err := http.ListenAndServeTLS(":8005", cert, key, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
