@@ -36,10 +36,10 @@ func main() {
 	go handleMessages()
 
 	// Start the server on localhost port 8000 and log any errors
-	log.Println("https server started on :8003")
+	log.Println("https server started on :8007")
 	cert := "/full/path/to/cert"
 	key := "full/path/to/certkey"
-	err := http.ListenAndServeTLS(":8003", cert, key, nil)
+	err := http.ListenAndServeTLS(":8007", cert, key, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
