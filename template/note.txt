@@ -1,3 +1,15 @@
+For setting up the default servers, you only need to edit the src/main.go files.
+
+Http:
+    > you only need to change where it says '../public' to '/full/path/to/your/chatterbox/chat-color/public'
+
+Https:
+    > you will not only make the same changes as for http, but you will also need to add your ssl cert and key
+    > see the https template for doing so...
+
+
+
+
 Here are the parts to focus on for customizing css:
 (*This makes the blue chat)
 (#edit these files' elements to either include these attributes or change to these attributes)

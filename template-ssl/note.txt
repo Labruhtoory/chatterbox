@@ -1,4 +1,4 @@
-*See http note for some help customizing css
+*See http template note for some help customizing css
 
 
 Basically, you have golang serve with its TLS function, and JS connect with a wss:// websocket instead of ws://.
