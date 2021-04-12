@@ -8,3 +8,8 @@ https://github.com/scotch-io/go-realtime-chat.git
 
 
 Tips and instructions can be found in the note.txt files in the templates and services folders :)
+
+
+Quick Start:
+
+$ sudo apt install git && git clone https://github.com/Labruhtoory/chatterbox.git && clear && echo "Now edit /src/main.go files according to the template instructions :)"
