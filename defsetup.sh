@@ -16,6 +16,7 @@ printf "Ok then, moving on....."
 break
 fi
 done
+rm -rf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 mv template-ssl/serv.conf /etc/nginx/conf.d/
 sed -i "s+$domain+mydomain.dns+gi" /etc/nginx/conf.d/serv.conf
 systemctl restart nginx
