@@ -1,7 +1,7 @@
 #!/bin/bash
 #edit nginx
 read -p "What is your website domain name? (EX: mydomain.com)> " domain
-sed -i "s+$domain+_+gi" /etc/nginx/sites-available/default
+sed -i "s+server_name _+server_name $domain+gi" /etc/nginx/sites-available/default
 systemctl restart nginx
 echo "In a separate terminal, if you have not already done so, "
 echo "Run the following command to get an ssl cert for your domain: "
@@ -18,7 +18,7 @@ fi
 done
 rm -rf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 mv template-ssl/serv.conf /etc/nginx/conf.d/
-sed -i "s+$domain+mydomain.dns+gi" /etc/nginx/conf.d/serv.conf
+sed -i "s+mydomain.dns+$domain+gi" /etc/nginx/conf.d/serv.conf
 systemctl restart nginx
 echo ""
 echo ""
@@ -28,26 +28,26 @@ read -p "What it the /path/to/ssl/cert? (EX: /etc/letsencrypt/domain/fullhain.pe
 read -p "What it the /path/to/ssl/cert? (EX: /etc/letsencrypt/domain/privkey.pem)> " keyloc
 #main.go public folder edits
 echo "Editing public folder paths"
-sed -i "s+$mainloc/chat-blue/public+../public+gi" chat-blue/src/main.go
-sed -i "s+$mainloc/chat-red/public+../public+gi" chat-red/src/main.go
-sed -i "s+$mainloc/chat-green/public+../public+gi" chat-green/src/main.go
-sed -i "s+$mainloc/chat-orange/public+../public+gi" chat-orange/src/main.go
-sed -i "s+$mainloc/chat-blue-ssl/public+../public+gi" chat-blue-ssl/src/main.go
-sed -i "s+$mainloc/chat-red-ssl/public+../public+gi" chat-red-ssl/src/main.go
-sed -i "s+$mainloc/chat-green-ssl/public+../public+gi" chat-green-ssl/src/main.go
-sed -i "s+$mainloc/chat-orange-ssl/public+../public+gi" chat-orange-ssl/src/main.go
+sed -i "s+../public+$mainloc/chat-blue/public+gi" chat-blue/src/main.go
+sed -i "s+../public+$mainloc/chat-red/public+gi" chat-red/src/main.go
+sed -i "s+../public+$mainloc/chat-green/public+gi" chat-green/src/main.go
+sed -i "s+../public+$mainloc/chat-orange/public+gi" chat-orange/src/main.go
+sed -i "s+../public+$mainloc/chat-blue-ssl/public+gi" chat-blue-ssl/src/main.go
+sed -i "s+../public+$mainloc/chat-red-ssl/public+gi" chat-red-ssl/src/main.go
+sed -i "s+../public+$mainloc/chat-green-ssl/public+gi" chat-green-ssl/src/main.go
+sed -i "s+../public+$mainloc/chat-orange-ssl/public+gi" chat-orange-ssl/src/main.go
 #main.go ssl cert path edits
 echo "Editing ssl cert folder paths"
-sed -i "s+$certloc+/full/path/to/cert+gi" chat-blue-ssl/src/main.go
-sed -i "s+$certloc+/full/path/to/cert+gi" chat-red-ssl/src/main.go
-sed -i "s+$certloc+/full/path/to/cert+gi" chat-green-ssl/src/main.go
-sed -i "s+$certloc+/full/path/to/cert+gi" chat-orange-ssl/src/main.go
+sed -i "s+/full/path/to/cert+$certloc+gi" chat-blue-ssl/src/main.go
+sed -i "s+/full/path/to/cert+$certloc+gi" chat-red-ssl/src/main.go
+sed -i "s+/full/path/to/cert+$certloc+gi" chat-green-ssl/src/main.go
+sed -i "s+/full/path/to/cert+$certloc+gi" chat-orange-ssl/src/main.go
 #main.go ssl key path edits
 echo "Editing ssl key folder paths"
-sed -i "s+$keyloc+/full/path/to/certkey+gi" chat-blue-ssl/src/main.go
-sed -i "s+$keyloc+/full/path/to/certkey+gi" chat-red-ssl/src/main.go
-sed -i "s+$keyloc+/full/path/to/certkey+gi" chat-green-ssl/src/main.go
-sed -i "s+$keyloc+/full/path/to/certkey+gi" chat-orange-ssl/src/main.go
+sed -i "s+/full/path/to/certkey+$keyloc+gi" chat-blue-ssl/src/main.go
+sed -i "s+/full/path/to/certkey+$keyloc+gi" chat-red-ssl/src/main.go
+sed -i "s+/full/path/to/certkey+$keyloc+gi" chat-green-ssl/src/main.go
+sed -i "s+/full/path/to/certkey+$keyloc+gi" chat-orange-ssl/src/main.go
 # double check
 echo "Have you made the necessary changes to all src/main.go files?"
 echo "If not, then you should review the note files in the templates."
