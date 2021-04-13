@@ -12,4 +12,4 @@ Tips and instructions can be found in the note.txt files in the templates and se
 
 Quick Start:
 
-$ sudo apt install -fy git golang && go get github.com/gorilla/websocket && git clone https://github.com/Labruhtoory/chatterbox.git && clear && echo "Now edit src/main.go files according to the templates instructions :)"
+$ sudo apt install -fy git golang && go get github.com/gorilla/websocket && cd /var/www/ && git clone https://github.com/Labruhtoory/chatterbox.git && clear && echo "Now edit src/main.go files according to the templates instructions :)"
