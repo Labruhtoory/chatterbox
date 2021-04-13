@@ -24,8 +24,8 @@ echo ""
 echo ""
 echo ""
 read -p "What is the /path/to/chatterbox folder? (EX: /var/www/chatterbox)> " mainloc
-read -p "What it the /path/to/ssl/cert? (EX: /etc/letsencrypt/domain/fullhain.pem)> " certloc
-read -p "What it the /path/to/ssl/cert? (EX: /etc/letsencrypt/domain/privkey.pem)> " keyloc
+read -p "What it the /path/to/ssl/cert? (EX: /etc/letsencrypt/live/domain/fullhain.pem)> " certloc
+read -p "What it the /path/to/ssl/cert? (EX: /etc/letsencrypt/live/domain/privkey.pem)> " keyloc
 #main.go public folder edits
 echo "Editing public folder paths"
 sed -i "s+../public+$mainloc/chat-blue/public+gi" chat-blue/src/main.go
