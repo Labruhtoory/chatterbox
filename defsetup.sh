@@ -19,6 +19,9 @@ done
 mv template-ssl/serv.conf /etc/nginx/conf.d/
 sed -i "s+$domain+mydomain.dns+gi" /etc/nginx/conf.d/serv.conf
 systemctl restart nginx
+echo ""
+echo ""
+echo ""
 read -p "What is the /path/to/chatterbox folder? (EX: /var/www/chatterbox)> " mainloc
 read -p "What it the /path/to/ssl/cert? (EX: /etc/letsencrypt/domain/fullhain.pem)> " certloc
 read -p "What it the /path/to/ssl/cert? (EX: /etc/letsencrypt/domain/privkey.pem)> " keyloc
