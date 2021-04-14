@@ -18,6 +18,7 @@ fi
 done
 rm -rf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 mv template-ssl/serv.conf /etc/nginx/conf.d/
+mv /var/www/html/index.nginx-debian.html /var/www/
 sed -i "s+mydomain.dns+$domain+gi" /etc/nginx/conf.d/serv.conf
 systemctl restart nginx
 echo ""
