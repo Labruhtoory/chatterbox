@@ -1,11 +1,9 @@
 #!/bin/bash
 #edit nginx
 read -p "What is your website domain name? (EX: mydomain.com)> " domain
-sed -i "s+server_name _+server_name $domain+gi" /etc/nginx/sites-available/default
-systemctl restart nginx
 echo "In a separate terminal, if you have not already done so, "
 echo "Run the following command to get an ssl cert for your domain: "
-echo "sudo certbot --nginx"
+echo "sudo certbot --nginx -d 'mydomainhere'"
 echo ""
 echo "press 'c' to continue....."
 while : ; do
@@ -16,15 +14,22 @@ printf "Ok then, moving on....."
 break
 fi
 done
+clear
+#setup nginx
 rm -rf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 mv template-ssl/serv.conf /etc/nginx/conf.d/
 mv /var/www/html/index.nginx-debian.html /var/www/
 sed -i "s+mydomain.dns+$domain+gi" /etc/nginx/conf.d/serv.conf
+sed -i "s+mydomain.dns+$domain+gi" chat.html
 systemctl restart nginx
 echo ""
 echo ""
 echo ""
 read -p "What is the /path/to/chatterbox folder? (EX: /var/www/chatterbox)> " mainloc
+clear
+echo "If you are not sure, in a separate terminal, run the following:"
+echo "sudo certbot certificates"
+echo ""
 read -p "What it the /path/to/ssl/cert? (EX: /etc/letsencrypt/live/domain/fullhain.pem)> " certloc
 read -p "What it the /path/to/ssl/cert? (EX: /etc/letsencrypt/live/domain/privkey.pem)> " keyloc
 #main.go public folder edits
@@ -63,6 +68,7 @@ break
 fi
 done
 #build & make services 
+echo "building sources and creating services"
 sudo cp services/* /etc/systemd/system/
 sudo mkdir /opt/chats
 sudo go build -o /opt/chats/chat1 chat-blue/src/main.go
