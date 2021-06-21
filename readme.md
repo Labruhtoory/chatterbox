@@ -16,4 +16,5 @@ Quick Start:
 
 
 Full Send (This is only if you have not made any changes to the server files):
+
       $ sudo apt update && sudo apt install -fy git golang nginx software-properties-common python-certbot-nginx && go get github.com/gorilla/websocket && cd /var/www/ && git clone https://github.com/Labruhtoory/chatterbox.git && cd chatterbox/ && chmod +x defsetup.sh && clear && ./defsetup.sh
