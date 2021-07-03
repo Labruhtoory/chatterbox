@@ -12,9 +12,9 @@ Tips and instructions can be found in the note.txt files in the templates and se
 
 Quick Start:
 
-      $ sudo apt update && sudo apt install -fy git golang nginx software-properties-common python-certbot-nginx && go get github.com/gorilla/websocket && cd /var/www/ && git clone https://github.com/Labruhtoory/chatterbox.git && cd chatterbox/ && chmod +x defsetup.sh && clear && echo "Now run the defsetup.sh script, or manually edit src/main.go files according to the templates instructions :)"
+      sudo apt update && sudo apt install -fy git golang nginx software-properties-common python-certbot-nginx && go get github.com/gorilla/websocket && cd /var/www/ && git clone https://github.com/Labruhtoory/chatterbox.git && cd chatterbox/ && chmod +x defsetup.sh && clear && echo "Now run the defsetup.sh script, or manually edit src/main.go files according to the templates instructions :)"
 
 
 Full Send (This is only if you have not made any changes to the server files):
 
-      $ sudo apt update && sudo apt install -fy git golang nginx software-properties-common python-certbot-nginx && go get github.com/gorilla/websocket && cd /var/www/ && git clone https://github.com/Labruhtoory/chatterbox.git && cd chatterbox/ && chmod +x defsetup.sh && clear && ./defsetup.sh
+      sudo apt update && sudo apt install -fy git golang nginx software-properties-common python-certbot-nginx && go get github.com/gorilla/websocket && cd /var/www/ && git clone https://github.com/Labruhtoory/chatterbox.git && cd chatterbox/ && chmod +x defsetup.sh && clear && ./defsetup.sh
